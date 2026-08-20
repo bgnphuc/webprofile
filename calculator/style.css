@@ -1,72 +1,121 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-body{
 
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100hv;
-    background:#f4f4f4;
-    font-family:Arial;
+body {
+    font-family: Arial, sans-serif;
 
+    background: #222;
+
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.calculator{
 
-    background: white;
+.calculator {
+    width: 320px;
 
-    padding:20px;
+    background: #333;
 
-    border-radius:10px;
+    padding: 20px;
 
-    box-shadow:0 0 10px rgha(0,0,0,.2);
+    border-radius: 20px;
 
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
 }
 
-#display{
 
-    width:100%;
+/* Màn hình */
 
-    height:50px;
+#display {
+    width: 100%;
 
-    font-size:24px;
+    height: 70px;
 
-    text-align:right;
+    margin-bottom: 15px;
 
-    padding-right:10px;
+    padding: 10px;
 
+    border: none;
+
+    border-radius: 10px;
+
+    background: #eee;
+
+    text-align: right;
+
+    font-size: 32px;
 }
 
-.buttom{
 
-    display:grid;
+/* Khu vực nút */
 
-    grid-template-columns:repear(4,70px);
+.buttons {
+    display: grid;
 
-    gap:10px;
+    grid-template-columns: repeat(4, 1fr);
 
+    gap: 10px;
 }
 
-buttom{
 
-    height:60px;
+/* Nút */
 
-    font-size:20px;
+button {
+    height: 60px;
 
-    cursor:pointer;
+    border: none;
 
+    border-radius: 10px;
+
+    font-size: 22px;
+
+    cursor: pointer;
+
+    background: #555;
+
+    color: white;
+
+    transition: 0.15s;
 }
 
-.equal{
 
-    grid-row:span 2;
+/* Khi rê chuột */
 
-    background:#27ae60;
+button:hover {
+    opacity: 0.8;
+}
 
-    color:white;
-    
+
+/* Khi bấm */
+
+button:active {
+    transform: scale(0.95);
+}
+
+
+/* Nút phép tính */
+
+.operator {
+    background: #f39c12;
+}
+
+
+/* Nút bằng */
+
+.equal {
+    background: #27ae60;
+}
+
+
+/* Nút số 0 */
+
+.zero {
+    grid-column: span 2;
 }

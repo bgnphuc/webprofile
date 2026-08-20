@@ -1,27 +1,63 @@
+// Lấy màn hình máy tính
 let display = document.getElementById("display");
 
-function append(value){
+
+// ========================================
+// THÊM SỐ / PHÉP TÍNH
+// ========================================
+
+function append(value) {
 
     display.value += value;
 
 }
 
-function clearDisplay(){
 
-    display.value += "";
+// ========================================
+// XÓA TOÀN BỘ
+// ========================================
+
+function clearDisplay() {
+
+    display.value = "";
 
 }
 
-function calculate(){
 
-    try{
+// ========================================
+// XÓA KÝ TỰ CUỐI
+// ========================================
 
-        display.value = eval(display.vallue);
+function deleteLast() {
+
+    display.value = display.value.slice(0, -1);
+
+}
+
+
+// ========================================
+// TÍNH KẾT QUẢ
+// ========================================
+
+function calculate() {
+
+    try {
+
+        // Nếu không có gì thì không làm gì
+        if (display.value === "") {
+            return;
+        }
+
+
+        // Thực hiện phép tính
+        display.value = eval(display.value);
 
     }
 
-    catch{
+    catch {
 
-        alert("biểu thức không hợp lệ!");
+        display.value = "Error";
+
     }
+
 }
